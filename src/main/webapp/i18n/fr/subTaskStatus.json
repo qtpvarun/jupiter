@@ -1,0 +1,15 @@
+{
+  "proTrackApp": {
+    "SubTaskStatus": {
+      "null": "",
+      "Open": "Open",
+      "Closed": "Closed",
+      "InProgress": "InProgress",
+      "OnHold": "OnHold",
+      "NeedInfo": "NeedInfo",
+      "Approved": "Approved",
+      "Rejected": "Rejected",
+      "ReOpen": "ReOpen"
+    }
+  }
+}

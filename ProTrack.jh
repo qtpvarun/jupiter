@@ -1,0 +1,137 @@
+
+application {
+  config {
+    baseName ProTrack,
+    applicationType monolith,
+    packageName com.btgrp.protrack,
+    serviceDiscoveryType eureka,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    devDatabaseType h2Disk,
+    cacheProvider hazelcast,
+    buildTool maven,
+    clientFramework react,
+    useSass false,
+    testFrameworks [protractor]
+  }
+  entities *
+}
+
+entity Project {
+    name String, // the business-friendly name of project
+    isSite360 Boolean, // flag to determine if project uses Site360 system
+    siteNumber Integer, // B+T unique identifier for a tower or location
+    internalDue Instant, // te – the department’s scheduled due date for the project in ERP
+    towerType String, // description of the type of tower associated with the project
+    pONumber String, // purchase order number for the project
+    towerLatitude Double, // 
+    towerLongitude Double, // 
+    memo String // brief message attached to the project
+}
+
+entity Company {
+    name String required unique,
+    description String
+}
+
+entity Carrier {
+    name String required unique,
+    description String
+}
+
+entity Task {
+    name String required unique,
+    description String,
+    erpProjectID String, // – the unique alphanumeric identifier for project from ERP
+    erpProjectSequence String, // – the sequential identifier for project from ERP
+    erpProjectType String, // – unique numeric identifier for ERP project type
+    erpStatus String, // – unique numeric identifier for ERP project status
+    status TaskStatus, 
+    assignedDate String, // – the date that Task was assigned (Unassigned →Active)
+    estimatedCompletionDate Instant, // – the date that the Task is expected to be
+    completedDate Instant, // – the date that Task completed its workflow
+    draftDueDate Instant, // – preliminary due date for Task in ProTrack only
+    internalDueDate Instant, // – preliminary due date for the project in ERP
+    priority Priority, // – Low, Medium, High
+    isOverdue Boolean, // – flag for identifying that a task is overdue
+    inProgress Boolean, // – flag for identifying that a task is in progress
+    grade Grade // – letter grade (A-F) set by QC to show the quality of completed work
+}
+
+entity SubTask {
+    name String required unique,
+    description String,
+    status SubTaskStatus, // – Open or Closed
+    assignedDate Instant, // – the date that Sub-Task was assigned
+    estimatedCompletionDate Instant, // – the date that the Task is expected to be completed
+    closedDate Instant, // – the date that Sub-Task was closed
+    priority Priority, // – Low, Medium, High
+    isOverdue Boolean, // – flag for identifying that a sub-task is overdue
+    inProgress Boolean // – flag for identifying that a sub-task is in progress
+}
+
+entity TaskHistory {
+    eventDate Instant, // – timestamp for a given event record
+    eventType EventType, // – describes the type of event that occurred (change, message, approval, etc.)
+    eventTopic String, // – user-provided subject of the event or comment
+    eventDetail String, // – body text for event or comment
+    redline String // – flag indicating that a comment requires immediate attention
+}
+
+enum Priority {
+    Low, Medium, High
+}
+
+enum Grade {
+    A, B, C, D, E, F
+}
+
+enum EventType {
+    Change, Message, Approval
+}
+
+enum SubTaskStatus {
+    Open, Closed, InProgress, OnHold, NeedInfo, Approved, Rejected, ReOpen
+}
+
+enum TaskStatus {
+    Open, Closed, InProgress, OnHold, NeedInfo, Approved, Rejected, ReOpen
+}
+
+relationship OneToMany {
+    Carrier{projects(name)} to Project{carrier(name)},
+    Project{tasks(name)} to Task{parentProject(name)}, 
+    Task{subTasks(login)} to SubTask{parentTask(name)}, 
+    Task{taskHistory(eventTopic)} to TaskHistory{parentTask(name)},
+    SubTask{taskHistory(eventTopic)} to TaskHistory{parentSubTask(name)},
+    Company{billedProjects(name)} to Project{billingCompany(name)},
+    Company{siteProjects(name)} to Project{siteCompany(name)}
+}
+
+relationship OneToOne {
+    Project{programManager(login)} to User, 
+    Project{projectManager(login)} to User
+}
+
+relationship ManyToOne {
+    Task{assignedTo(login)} to User,
+    Task{assignedBy(login)} to User,
+    Task{assignedQC(login)} to User,
+    SubTask{assignedTo(login)} to User,
+    SubTask{assignedBy(login)} to User,
+    SubTask{sourceUser(login)} to User,
+    SubTask{targetUser(login)} to User
+}
+
+
+// Set pagination options
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+// Set service options to all except few
+service * with serviceImpl
+// Set an angular suffix
+// angularSuffix * with mySuffix
+
+// search Task, SubTask with elasticsearch

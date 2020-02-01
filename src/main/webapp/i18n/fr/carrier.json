@@ -1,0 +1,24 @@
+{
+  "proTrackApp": {
+    "carrier": {
+      "home": {
+        "title": "Carriers",
+        "createLabel": "Créer un nouveau Carrier",
+        "createOrEditLabel": "Créer ou éditer un Carrier",
+        "notFound": "Aucun Carrier trouvé"
+      },
+      "created": "Un nouveau Carrier a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Carrier avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Carrier avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Carrier {{ id }} ?"
+      },
+      "detail": {
+        "title": "Carrier"
+      },
+      "name": "Name",
+      "description": "Description",
+      "projects": "Projects"
+    }
+  }
+}

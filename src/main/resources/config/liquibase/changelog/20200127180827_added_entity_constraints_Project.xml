@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Project.
+    -->
+    <changeSet id="20200127180827-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="program_manager_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_program_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="project_manager_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_project_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="carrier_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_carrier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="carrier"/>
+
+        <addForeignKeyConstraint baseColumnNames="billing_company_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_billing_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+        <addForeignKeyConstraint baseColumnNames="site_company_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_site_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+    </changeSet>
+</databaseChangeLog>

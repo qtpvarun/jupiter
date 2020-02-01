@@ -1,0 +1,36 @@
+{
+  "proTrackApp": {
+    "subTask": {
+      "home": {
+        "title": "Sub Tasks",
+        "createLabel": "Create a new Sub Task",
+        "createOrEditLabel": "Create or edit a Sub Task",
+        "notFound": "No Sub Tasks found"
+      },
+      "created": "A new Sub Task is created with identifier {{ param }}",
+      "updated": "A Sub Task is updated with identifier {{ param }}",
+      "deleted": "A Sub Task is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sub Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Sub Task"
+      },
+      "name": "Name",
+      "description": "Description",
+      "status": "Status",
+      "assignedDate": "Assigned Date",
+      "estimatedCompletionDate": "Estimated Completion Date",
+      "closedDate": "Closed Date",
+      "priority": "Priority",
+      "isOverdue": "Is Overdue",
+      "inProgress": "In Progress",
+      "taskHistory": "Task History",
+      "assignedTo": "Assigned To",
+      "assignedBy": "Assigned By",
+      "sourceUser": "Source User",
+      "targetUser": "Target User",
+      "parentTask": "Parent Task"
+    }
+  }
+}

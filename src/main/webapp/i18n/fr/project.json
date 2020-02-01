@@ -1,0 +1,36 @@
+{
+  "proTrackApp": {
+    "project": {
+      "home": {
+        "title": "Projects",
+        "createLabel": "Créer un nouveau Project",
+        "createOrEditLabel": "Créer ou éditer un Project",
+        "notFound": "Aucun Project trouvé"
+      },
+      "created": "Un nouveau Project a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Project avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Project avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Project {{ id }} ?"
+      },
+      "detail": {
+        "title": "Project"
+      },
+      "name": "Name",
+      "isSite360": "Is Site 360",
+      "siteNumber": "Site Number",
+      "internalDue": "Internal Due",
+      "towerType": "Tower Type",
+      "pONumber": "P O Number",
+      "towerLatitude": "Tower Latitude",
+      "towerLongitude": "Tower Longitude",
+      "memo": "Memo",
+      "programManager": "Program Manager",
+      "projectManager": "Project Manager",
+      "tasks": "Tasks",
+      "carrier": "Carrier",
+      "billingCompany": "Billing Company",
+      "siteCompany": "Site Company"
+    }
+  }
+}

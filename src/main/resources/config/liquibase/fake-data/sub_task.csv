@@ -1,0 +1,11 @@
+id;name;description;status;assigned_date;estimated_completion_date;closed_date;priority;is_overdue;in_progress
+1;system;back-end Metal;Closed;2020-01-27T11:31:13;2020-01-27T05:37:28;2020-01-27T06:06:09;Low;true;true
+2;Home Loan Account Circles;Berkshire Security Bedfordshire;NeedInfo;2020-01-27T02:33:01;2020-01-27T10:28:24;2020-01-27T17:32:33;Low;false;false
+3;Street Credit Card Account Bike;deposit Steel Practical;Closed;2020-01-27T16:07:01;2020-01-27T00:59:18;2020-01-27T09:14:51;Medium;true;true
+4;monitor solutions transform;Manor Licensed Frozen Salad;Approved;2020-01-26T19:00:21;2020-01-27T04:49:27;2020-01-27T10:10:38;High;true;false
+5;fault-tolerant Global payment;applications Games;Closed;2020-01-27T16:22:05;2020-01-27T09:53:31;2020-01-27T02:15:55;Medium;false;true
+6;Awesome;Gardens invoice;Closed;2020-01-26T18:40:17;2020-01-27T03:56:41;2020-01-26T19:05:12;Medium;true;false
+7;Fantastic Soft Shoes Facilitator Path;dot-com Research;Approved;2020-01-27T14:31:56;2020-01-27T04:56:14;2020-01-27T17:56:53;Medium;true;false
+8;River Guarani;Shoes Health;Open;2020-01-26T19:01:43;2020-01-26T18:51:06;2020-01-27T03:33:51;Medium;true;false
+9;mobile Pennsylvania empowering;Rustic;OnHold;2020-01-26T22:08:37;2020-01-27T11:06:11;2020-01-27T10:04:32;High;true;true
+10;Berkshire;Bond Markets Units European Composite Unit (EURCO) architectures;NeedInfo;2020-01-26T21:41:44;2020-01-27T05:44:41;2020-01-27T13:37:56;High;false;true

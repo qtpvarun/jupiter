@@ -1,0 +1,10 @@
+{
+  "proTrackApp": {
+    "EventType": {
+      "null": "",
+      "Change": "Change",
+      "Message": "Message",
+      "Approval": "Approval"
+    }
+  }
+}
